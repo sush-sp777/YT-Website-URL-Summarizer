@@ -86,7 +86,8 @@ if st.button("Summarize the content from YT or Website"):
 
                 final_chain=final_prompt|llm|StrOutputParser()    
                 final_summary=final_chain.invoke({"chunks":"\n\n".join(chunk_summaries)})
-                st.success(final_summary)
+                st.markdown("### ✅ Summary:")
+                st.markdown(final_summary)
 
         except Exception as e:
             st.exception(f"Exception:{e}")
